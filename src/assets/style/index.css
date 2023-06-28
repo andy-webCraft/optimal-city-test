@@ -1,0 +1,14 @@
+@import url("./normalize.css");
+
+*:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+body {
+  font-family: "Montserrat", serif;
+}
+
+._shadow {
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+}
