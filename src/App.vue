@@ -10,7 +10,7 @@
           name="editing-item"
           v-model="editableValue"
           placeholder="select item to edit"
-          :disabled="!editableIndex"
+          :disabled="editableIndex === null"
         />
         <button class="form__btn _shadow" type="submit" :disabled="!editableValue">Save</button>
       </form>
@@ -61,14 +61,14 @@ export default defineComponent({
   },
   watch: {
     editableIndex() {
-      if (!this.editableIndex) return;
+      if (this.editableIndex === null) return;
 
       this.editableValue = this.appData[this.editableIndex].value;
     },
   },
   methods: {
     onSubmitHandler() {
-      if (!this.editableIndex || !this.editableValue) return;
+      if (this.editableIndex === null || !this.editableValue) return;
 
       this.appData[this.editableIndex].value = this.editableValue;
     },
